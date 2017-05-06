@@ -1,3 +1,4 @@
+
 {
   /**
     Ember CLI sends analytics information by default. The data is completely
@@ -6,4 +7,5 @@
     Setting `disableAnalytics` to true will prevent any data from being sent.
   */
   "disableAnalytics": false
+  
 }

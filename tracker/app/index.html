@@ -1,25 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Tracker</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    {{content-for "head"}}
-
-    <link rel="stylesheet" href="assets/vendor.css">
-    <link rel="stylesheet" href="assets/tracker.css">
-
-    {{content-for "head-footer"}}
+    <title>Chattrbox</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/styles.css">
   </head>
-  <body>
-    {{content-for "body"}}
+  <body class="container chat-wrapper">
 
-    <script src="assets/vendor.js"></script>
-    <script src="assets/tracker.js"></script>
+    <header class="chat-app-header">
+      <h1>Chattrbox</h1>
+    </header>
 
-    {{content-for "body-footer"}}
+    <div class="panel panel-default chat-messages">
+        <ul class="panel-body chat-message-list" data-chat="message-list"></ul>
+    </div>
+
+    <section class="chat-input">
+      <form data-chat="chat-form" class="cb-container">
+        <div class="input-group">
+          <label for="js-message-input" class="sr-only">Message:</label>
+          <input type="text" class="form-control" data-chat="message-input" autofocus>
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button">Go!</button>
+          </span>
+        </div><!-- /input-group -->
+      </form>
+    </section>
+
+    <script src="/scripts/dist/main.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js" type="text/javascript" charset="utf-8"></script> -->
   </body>
 </html>
