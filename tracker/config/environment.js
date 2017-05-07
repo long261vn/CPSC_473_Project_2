@@ -2,10 +2,13 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'tracker',
+    modulePrefix: 'draw',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
+    'ember-websockets': {
+        socketIO: true
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
