@@ -5,14 +5,12 @@ module.exports = function() {
 
   io.on('connection', function (socket) {
         console.log('Connection made on socketIO'); // eslint-disable-line no-console
-        //console.log(socket.data);
-        /*
-        socket.on('message', function () { });
-        socket.on('disconnect', function () { });
-        */
+        socket.on('message', function (data) {console.log(data.x);});
+
         socket.on('mousemove', function (data) {
-            console.log(data);
-            socket.broadcasts.emit('moving',data);
+            //console.log(data.id);
+            socket.broadcast.emit('moving',data);
         });
+
     });
 };
