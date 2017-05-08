@@ -12,6 +12,7 @@ export default Ember.Component.extend({
     didInsertElement: function() {
         // gotta set ctxf here instead of in init because
         // the element might not be in the dom yet in init
+        //var doc = $(document);
         this.set('doc', Ember.$(document));
         this.set('canvas', this.get('element'));
         this.set('ctx', this.get('element').getContext('2d'));
@@ -27,9 +28,10 @@ export default Ember.Component.extend({
         var cursors = {};
         //var socket = this.get('socketService').socketFor('ws://localhost:8080/foo/bar');
         //console.log(socket.emit);
-        const socket = this.get('socketIOService').socketFor('http://localhost:7100/' + this.get('namespace'));
+        const socket = this.get('socketIOService').socketFor('http://localhost:7100/');//+ this.get('namespace')
         //console.log(socket);
-        socket.on('mvoing', function(data) {
+        socket.on('moving', function(data) {
+            console.log('draw');
             if(! (data.id in clients)){
     			// a new user has come online. create a cursor for them
     			cursors[data.id] = $('<div class="cursor">').appendTo('#cursors');
@@ -66,18 +68,19 @@ export default Ember.Component.extend({
         var lastEmit = $.now();
         console.log('lastEmit', lastEmit);
 
-        Ember.$(document).on('mousemove', function(e){
+
+
+        Ember.$(document).on('mousemove', function(e){ //mouseover
+            //socket.send('hello');
             if($.now() - lastEmit > 30){
-    			//socket.on('mousemove', function(){
-                    //console.log('emit');
-                    socket.emit('mousemove', {
-        				'x': e.pageX,
-        				'y': e.pageY,
-        				'drawing': canvas.get('drawing'),
-        				'id': id
-        			});
-                    socket.send('Hello server');
-                //});
+                console.log('socket connected', socket.socket.connected);
+                //socket.send({'x':10});
+                socket.emit('mousemove',{
+    				'x': e.pageX,
+    				'y': e.pageY,
+    				'drawing': canvas.get('drawing'),
+    				'id': id
+    			});
     			lastEmit = $.now();
     		}
 
@@ -128,7 +131,6 @@ export default Ember.Component.extend({
         this.prev.x=e.pageX;
         this.prev.y=e.pageY;
     }
-
 
 
 
