@@ -9,6 +9,20 @@ module.exports = function(environment) {
     'ember-websockets': {
         socketIO: true
     },
+
+    // Using Firebase for chat
+    firebase: {
+      apiKey: "AIzaSyA9cMGi7pCIlic1APWh-IxZtAnkR6txErU",
+      authDomain: "chat-f405a.firebaseapp.com",
+      databaseURL: "https://chat-f405a.firebaseio.com",
+      storageBucket: "chat-f405a.appspot.com"
+
+    },
+    torii: {
+      sessionServiceName: 'session'
+    },
+
+
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build

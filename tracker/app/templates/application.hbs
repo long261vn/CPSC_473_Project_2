@@ -1,1 +1,11 @@
-{{outlet}}
+<div class="header">
+  <h1>
+    Hello! Welcome to our page!
+    {{#link-to 'draw'}}Draw{{/link-to}}
+    {{#link-to 'messages'}}Messages{{/link-to}}
+  </h1>
+</div>
+
+<div class="chat-body">
+  {{outlet}}
+</div>
