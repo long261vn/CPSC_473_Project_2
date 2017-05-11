@@ -141,3 +141,48 @@ footer a i b{
 	color:#c92020;
 	font-weight: normal;
 }
+
+/**
+ * Authentication Page
+ */
+
+.user-data {
+  margin: 30px;
+}
+
+.user-data-table tr td {
+  padding: 10px 10px 10px 15px;
+}
+
+.auth {
+  margin: 30px;
+}
+
+
+.bold {
+  font-weight: bold;
+}
+
+/**
+ * General
+ */
+
+.avatar {
+  border-radius: 100%;
+}
+
+button {
+  padding: 0.5em 1em;
+  background-color: #50b1ff;
+  border: none;
+  -webkit-transition: background-color 300ms;
+  transition: background-color 300ms;
+  outline: none;
+
+  color: #FFF;
+  font-weight: 300;
+}
+
+button:hover {
+  background-color: #379ae9;
+}

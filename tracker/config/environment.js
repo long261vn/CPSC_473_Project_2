@@ -11,15 +11,30 @@ module.exports = function(environment) {
     },
 
     // Using Firebase for chat
+    // firebase: {
+    //   apiKey: "AIzaSyA9cMGi7pCIlic1APWh-IxZtAnkR6txErU",
+    //   authDomain: "chat-f405a.firebaseapp.com",
+    //   databaseURL: "https://chat-f405a.firebaseio.com",
+    //   storageBucket: "chat-f405a.appspot.com"
+    //
+    // },
     firebase: {
-      apiKey: "AIzaSyA9cMGi7pCIlic1APWh-IxZtAnkR6txErU",
-      authDomain: "chat-f405a.firebaseapp.com",
-      databaseURL: "https://chat-f405a.firebaseio.com",
-      storageBucket: "chat-f405a.appspot.com"
+      apiKey: "AIzaSyB0JQx0fOj2x7p8jZwlNB9JNxcwvkTH0lw",
+      authDomain: "cs473-31370.firebaseapp.com",
+      databaseURL: "https://cs473-31370.firebaseio.com",
+      storageBucket: "cs473-31370.appspot.com"
 
     },
     torii: {
       sessionServiceName: 'session'
+    },
+    contentSecurityPolicy: {
+      'script-src': '\'self\' \'unsafe-eval\' apis.google.com',
+      'style-src': '\'self\' \'unsafe-inline\' fonts.googleapis.com',
+      'font-src': '\'self\' fonts.gstatic.com',
+      'frame-src': '\'self\' https://*.firebaseapp.com',
+      'img-src': '\'self\' *.gravatar.com s3.amazonaws.com',
+      'connect-src': '\'self\' wss://*.firebaseio.com https://*.googleapis.com'
     },
 
 

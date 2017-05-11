@@ -1,11 +1,59 @@
-<div class="header">
+<!--
+{{#if session.isAuthenticated}}
+  Logged in as {{session.currentUser.displayName}}
+  <button {{action "signOut"}}>Sign out</button>
+    <div class="header">
+      <h1>
+        Hello! Welcome to our page!
+        {{#link-to 'draw'}}Draw{{/link-to}}
+        {{#link-to 'messages'}}Messages{{/link-to}}
+      </h1>
+    </div>
+
+    <div class="chat-body">
+      {{outlet}}
+    </div>
+
+{{else}}
+  <button {{action "signIn" "twitter"}}>Sign in with Twitter</button>
+
+{{/if}} -->
+
+
+<!-- <div class="header">
   <h1>
     Hello! Welcome to our page!
     {{#link-to 'draw'}}Draw{{/link-to}}
     {{#link-to 'messages'}}Messages{{/link-to}}
   </h1>
-</div>
-
+</div> -->
+<!--
 <div class="chat-body">
   {{outlet}}
-</div>
+</div> -->
+{{#if session.currentUser}}
+    <button class="sign-out" {{action "signOut"}}>Sign Out</button>
+    <div class="header">
+      <h1>
+        Hello {{session.currentUser.displayName}}! Welcome to our page!
+        <br>
+        {{#link-to 'draw'}}Draw{{/link-to}}
+        {{#link-to 'messages'}}Messages{{/link-to}}
+
+
+      </h1>
+    </div>
+
+    <div class="chat-body">
+      {{outlet}}
+    </div>
+
+
+
+{{else}}
+  <div>
+    <button class="auth-as-google"   {{action "signIn" "google" redirect}}>Sign in with Google</button>
+  </div>
+  <!-- <div>Redirect? {{input type="checkbox" checked=redirect}}</div> -->
+
+{{/if}}
