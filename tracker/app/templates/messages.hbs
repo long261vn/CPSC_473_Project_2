@@ -1,17 +1,24 @@
+<div class="jumbotron">
+  <div class="container">
+    <h1>Messages</h1>
 
-{{outlet}}
-
-
-
-<div class="new-msg-form">
-    {{input type="text" placeholder="Name" value=name class="name-input"}}
-    {{input type="text" placeholder="Message" value=body class="msg-input"}}
-    <button {{action 'addMessage'}} class="submit">Submit</button>
+    <!-- Chatting with EmberFire -->
+    {{#each model as |message|}}
+        <div class="each-msg">{{message.name}} : {{message.body}}</div>
+    {{/each}}
+    <div class="new-msg-form">
+        {{input type="text" placeholder="Name" value=name class="name-input"}}
+        {{input type="text" placeholder="Message" value=body class="msg-input"}}
+        <button class="btn btn-success" {{action 'addMessage'}} >Submit</button>
+    </div>
+    <!-- {{outlet}} -->
+  </div>
 </div>
+<div class="container">
 
 
-
-
-{{#each model as |message|}}
-    <div class="each-msg">{{message.name}} : {{message.body}}</div>
-{{/each}}
+  <!-- footer -->
+  <footer>
+    <p>&copy; Team 6 - CPSC 473 - CSUF</p>
+  </footer>
+</div> <!-- /container -->

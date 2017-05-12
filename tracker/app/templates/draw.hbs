@@ -1,27 +1,16 @@
-This is draw page
 
-<p>Canvas</p>
 <div id="cursors">
     <!-- The mouse pointers will be created here -->
 </div>
 
 {{canvas-draw action="mouseDown"}}
+  <h2>Canvas drawing</h2>
+
+<div class="container">
 
 
-
-<!--
-<canvas id="paper" width="1900" height="1000" {{action 'mousedown'}}>
-    Your browser needs to support canvas for this to work!
-</canvas>
--->
-<div class="message-box">
-  {{#each messages as |message|}}
-    <p>{{message.text}}</p>
-  {{/each}}
-</div>
-
-<div class="message-inputs">
-  {{input value=messageText}}
-
-  <button {{action 'submitText'}}>Send Message</button>
-</div>
+  <!-- footer -->
+  <footer>
+    <p>&copy; Team 6 - CPSC 473 - CSUF</p>
+  </footer>
+</div> <!-- /container -->

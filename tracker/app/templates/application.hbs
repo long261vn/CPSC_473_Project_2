@@ -1,59 +1,102 @@
-<!--
-{{#if session.isAuthenticated}}
-  Logged in as {{session.currentUser.displayName}}
-  <button {{action "signOut"}}>Sign out</button>
-    <div class="header">
-      <h1>
-        Hello! Welcome to our page!
-        {{#link-to 'draw'}}Draw{{/link-to}}
-        {{#link-to 'messages'}}Messages{{/link-to}}
-      </h1>
-    </div>
 
-    <div class="chat-body">
-      {{outlet}}
-    </div>
-
-{{else}}
-  <button {{action "signIn" "twitter"}}>Sign in with Twitter</button>
-
-{{/if}} -->
-
-
-<!-- <div class="header">
-  <h1>
-    Hello! Welcome to our page!
-    {{#link-to 'draw'}}Draw{{/link-to}}
-    {{#link-to 'messages'}}Messages{{/link-to}}
-  </h1>
-</div> -->
-<!--
-<div class="chat-body">
-  {{outlet}}
-</div> -->
+<!-- ********************************* sign-in ********************************* -->
 {{#if session.currentUser}}
-    <button class="sign-out" {{action "signOut"}}>Sign Out</button>
-    <div class="header">
-      <h1>
-        Hello {{session.currentUser.displayName}}! Welcome to our page!
-        <br>
-        {{#link-to 'draw'}}Draw{{/link-to}}
-        {{#link-to 'messages'}}Messages{{/link-to}}
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="#" class="navbar-brand">CPSC473 Project2</a>
+          <a href="home" class="navbar-brand">Home</a>
+          <a href="draw" class="navbar-brand"> Draw</a>
+          <a href="messages" class="navbar-brand">  Messages</a>
 
-
-      </h1>
-    </div>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a>Hello {{session.currentUser.displayName}}</a>
+            </li>
+            <li>
+              <a class="nav-item nav-link" {{action "signOut"}}>Sign Out</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
     <div class="chat-body">
       {{outlet}}
     </div>
 
-
-
+<!-- ********************************* NOT sign-in ********************************* -->
 {{else}}
-  <div>
-    <button class="auth-as-google"   {{action "signIn" "google" redirect}}>Sign in with Google</button>
+  <!-- nav bar -->
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="#" class="navbar-brand">CPSC473 Project2</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a>You are not sign-in!</a>
+          </li>
+          <li>
+            <a class="nav-item nav-link" {{action "signIn" "google" redirect}}>Sign in with Google</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Info when not sign-in -->
+  <div class="jumbotron">
+    <div class="container">
+      <h1>Hello!</h1>
+      <p>This is our Project 2 for CPSC473-02 class.</p>
+      <p>Group Members: Payaam Emami, Yijie Sun, Tayseer Edouni, Kevin Lam, Long Nguyen</p>
+      <p>Project Summary: This is a Web application with real-time where users draw and chat with others</p>
+      <p>It is implemented using Ember JS, JavaScript, HTML, CSS, Bootstrap, socketIO, Firebase</p>
+      <p>Please sign-in with Google account to continue!!!</p>
+      <p><a class="btn btn-primary btn-lg" role="button" {{action "signIn" "google" redirect}}>Sign in with Google</a></p>
+    </div>
   </div>
-  <!-- <div>Redirect? {{input type="checkbox" checked=redirect}}</div> -->
+
+  <div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+      <div class="col-md-4">
+        <h2>Ember.js</h2>
+        <p>Ember.js is an open-source JavaScript web framework, based on the Model–view–viewmodel (MVVM) pattern. Ember is used on many popular websites, including Discourse, Groupon, LinkedIn, Vine, Live Nation, Nordstrom, Twitch.tv and Chipotle. </p>
+        <p><a class="btn btn-default" href="https://emberjs.com/" role="button">View details »</a></p>
+      </div>
+      <div class="col-md-4">
+        <h2>Socket.IO</h2>
+        <p>Socket.IO  is a JavaScript library for realtime web applications. It enables realtime, bi-directional communication between web clients and servers. It works on every platform, browser or device, focusing equally on reliability and speed.</p>
+        <p><a class="btn btn-default" href="https://socket.io/" role="button">View details »</a></p>
+     </div>
+      <div class="col-md-4">
+        <h2>Firebase</h2>
+        <p>Firebase is a mobile and web application development platform. Firebase's initial product was a realtime database. The company was acquired by Google in October 2014 and a significant number of new features were featured in May 2016 at Google I/O.</p>
+        <p><a class="btn btn-default" href="https://firebase.google.com/" role="button">View details »</a></p>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer>
+      <p>&copy; Team 6 - CPSC 473 - CSUF</p>
+    </footer>
+  </div> <!-- /container -->
 
 {{/if}}

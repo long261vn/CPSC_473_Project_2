@@ -1,0 +1,26 @@
+
+
+<!-- <p>Canvas</p> -->
+<div id="cursors">
+    <!-- The mouse pointers will be created here -->
+</div>
+
+{{canvas-draw action="mouseDown"}}
+
+
+<!-- Chatting with EmberFire -->
+<div class="new-msg-form">
+    {{input type="text" placeholder="Name" value=name class="name-input"}}
+    {{input type="text" placeholder="Message" value=body class="msg-input"}}
+    <button class="btn btn-success" {{action 'addMessage'}} >Submit</button>
+</div>
+
+{{#each model as |message|}}
+    <div class="each-msg">{{message.name}} : {{message.body}}</div>
+{{/each}}
+
+<!-- {{outlet}} -->
+
+<footer>
+  <p>&copy; Team 6 - CPSC 473 - CSUF</p>
+</footer>

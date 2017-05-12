@@ -2,8 +2,8 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
     tagName: 'canvas',
-    width: 1000,
-    height: 1000,
+    width: 500,
+    height: 500,
     attributeBindings: ['width','height'],
     socketService: Ember.inject.service('websockets'),
     socketIOService: Ember.inject.service('socket-io'),
@@ -16,6 +16,10 @@ export default Ember.Component.extend({
         this.set('doc', Ember.$(document));
         this.set('canvas', this.get('element'));
         this.set('ctx', this.get('element').getContext('2d'));
+
+        this.set('ctx.lineWidth', 2);
+        this.set('ctx.strokeStyle', '#FF0000');
+
         //this.prev = Ember.A();
 
         // Generate an unique ID
