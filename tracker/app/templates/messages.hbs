@@ -4,21 +4,20 @@
 
     <!-- Chatting with EmberFire -->
     {{#each model as |message|}}
-        <div class="each-msg">{{message.name}} : {{message.body}}</div>
+      <div class="each-msg">{{message.name}} : {{message.body}}</div>
     {{/each}}
     <div class="new-msg-form">
-        {{input type="text" placeholder="Name" value=name class="name-input"}}
-        {{input type="text" placeholder="Message" value=body class="msg-input"}}
-        <button class="btn btn-success" {{action 'addMessage'}} >Submit</button>
+      {{input type="text" placeholder="Name" value=name class="name-input"}} {{input type="text" placeholder="Message" value=body class="msg-input"}}
+      <button class="btn btn-success" {{action 'addMessage'}}>Submit</button>
     </div>
     <!-- {{outlet}} -->
   </div>
 </div>
+
 <div class="container">
-
-
   <!-- footer -->
   <footer>
     <p>&copy; Team 6 - CPSC 473 - CSUF</p>
   </footer>
-</div> <!-- /container -->
+</div>
+<!-- /container -->

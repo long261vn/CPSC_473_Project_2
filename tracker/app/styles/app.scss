@@ -1,36 +1,29 @@
 // app/styles/app.scss
-
 /*
  * Base structure
  */
-
 /* Move down content because we have a fixed navbar that is 50px tall */
 body {
   padding-top: 50px;
 }
-
-
 /*
  * Global add-ons
  */
-
 .sub-header {
   padding-bottom: 10px;
   border-bottom: 1px solid #eee;
 }
-
 /*
  * Top navigation
  * Hide default border to remove 1px line.
  */
+
 .navbar-fixed-top {
   border: 0;
 }
-
 /*
  * Sidebar
  */
-
 /* Hide for mobile, show later */
 .sidebar {
   display: none;
@@ -45,18 +38,21 @@ body {
     display: block;
     padding: 20px;
     overflow-x: hidden;
-    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    overflow-y: auto;
+    /* Scrollable contents if viewport is shorter than content. */
     background-color: #f5f5f5;
     border-right: 1px solid #eee;
   }
 }
-
 /* Sidebar navigation */
+
 .nav-sidebar {
-  margin-right: -21px; /* 20px padding + 1px border */
+  margin-right: -21px;
+  /* 20px padding + 1px border */
   margin-bottom: 20px;
   margin-left: -20px;
 }
+
 .nav-sidebar {
   > li {
     > a {
@@ -66,18 +62,17 @@ body {
   }
 
   > .active {
-    > a, > a:hover, > a:focus {
+     > a:focus,
+     > a:hover,
+    > a {
       color: #fff;
       background-color: #428bca;
     }
   }
-
 }
-
 /*
  * Main content
  */
-
 .main {
   padding: 20px;
 
@@ -91,96 +86,79 @@ body {
     padding-left: 40px;
   }
 }
-
 /*-------------------------
 	Simple reset
 --------------------------*/
-
-
-*{
-	margin:0;
-	padding:0;
+* {
+  margin: 0;
+  padding: 0;
 }
-
-
-
 /*-------------------------
 	Main Area
 --------------------------*/
-
-
-
-
-
-#cursors{
-	position:relative;
+#cursors {
+  position: relative;
 }
 
-#cursors .cursor{
-	position:absolute;
-	width:15px;
-	height:22px;
-	background:url('./img/pointer.png') no-repeat -4px 0;
+#cursors .cursor {
+  position: absolute;
+  width: 15px;
+  height: 22px;
+  background: url('./img/pointer.png') no-repeat -4px 0;
 }
-
-
-
 /*----------------------------
 	The Footer
 -----------------------------*/
-
-
-footer{
-	background-color: #111111;
-	bottom: 0;
-	box-shadow: 0 -1px 2px rgba(0,0,0,0.4);
-	height: 45px;
-	left: 0;
-	position: fixed;
-	width: 100%;
-	z-index: 100000;
+footer {
+  background-color: #111111;
+  bottom: 0;
+  box-shadow: 0 -1px 2px rgba(0,0,0,0.4);
+  height: 45px;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 100000;
 }
 
-footer h2{
-	color: #EEEEEE;
-	font-size: 14px;
-	font-weight: normal;
-	left: 50%;
-	margin-left: -400px;
-	padding: 13px 0 0;
-	position: absolute;
-	width: 540px;
+footer h2 {
+  color: #EEEEEE;
+  font-size: 14px;
+  font-weight: normal;
+  left: 50%;
+  margin-left: -400px;
+  padding: 13px 0 0;
+  position: absolute;
+  width: 540px;
 }
 
-footer h2 i{
-	font-style:normal;
-	color:#888;
+footer h2 i {
+  font-style: normal;
+  color: #888;
 }
 
-footer a.tzine,a.tzine:visited{
-	color: #999999;
-	font-size: 12px;
-	left: 50%;
-	margin: 16px 0 0 110px;
-	position: absolute;
-	text-decoration: none;
-	top: 0;
+a.tzine:visited,
+footer a.tzine {
+  color: #999999;
+  font-size: 12px;
+  left: 50%;
+  margin: 16px 0 0 110px;
+  position: absolute;
+  text-decoration: none;
+  top: 0;
 }
 
-footer a i{
-	color:#ccc;
-	font-style: normal;
+footer a i {
+  color: #ccc;
+  font-style: normal;
 }
 
-footer a i b{
-	color:#c92020;
-	font-weight: normal;
+footer a i b {
+  color: #c92020;
+  font-weight: normal;
 }
-
 /**
  * Authentication Page
  */
-
 .user-data {
   margin: 30px;
 }
@@ -193,15 +171,12 @@ footer a i b{
   margin: 30px;
 }
 
-
 .bold {
   font-weight: bold;
 }
-
 /**
  * General
  */
-
 .avatar {
   border-radius: 100%;
 }
@@ -213,7 +188,6 @@ button {
   -webkit-transition: background-color 300ms;
   transition: background-color 300ms;
   outline: none;
-
   color: #FFF;
   font-weight: 300;
 }
@@ -223,6 +197,6 @@ button:hover {
 }
 
 canvas {
-	border: 2px solid #000;
-	background:url('./img/bg.png') repeat;
+  border: 2px solid #000;
+  background: url('./img/bg.png') repeat;
 }

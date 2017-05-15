@@ -7,17 +7,10 @@ module.exports = function(environment) {
     baseURL: '/',
     locationType: 'auto',
     'ember-websockets': {
-        socketIO: true
+      socketIO: true
     },
 
     // Using Firebase for chat
-    // firebase: {
-    //   apiKey: "AIzaSyA9cMGi7pCIlic1APWh-IxZtAnkR6txErU",
-    //   authDomain: "chat-f405a.firebaseapp.com",
-    //   databaseURL: "https://chat-f405a.firebaseio.com",
-    //   storageBucket: "chat-f405a.appspot.com"
-    //
-    // },
     firebase: {
       apiKey: "AIzaSyB0JQx0fOj2x7p8jZwlNB9JNxcwvkTH0lw",
       authDomain: "cs473-31370.firebaseapp.com",

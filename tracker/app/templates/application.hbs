@@ -1,39 +1,38 @@
-
 <!-- ********************************* sign-in ********************************* -->
 {{#if session.currentUser}}
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a href="#" class="navbar-brand">CPSC473 Project2</a>
-          <a href="home" class="navbar-brand">Home</a>
-          <a href="draw" class="navbar-brand"> Draw</a>
-          <a href="messages" class="navbar-brand">  Messages</a>
+        <a href="#" class="navbar-brand">CPSC473 Project2</a>
+        <a href="home" class="navbar-brand">Home</a>
+        <a href="draw" class="navbar-brand"> Draw</a>
+        <a href="messages" class="navbar-brand">  Messages</a>
 
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-              <a>Hello {{session.currentUser.displayName}}</a>
-            </li>
-            <li>
-              <a class="nav-item nav-link" {{action "signOut"}}>Sign Out</a>
-            </li>
-          </ul>
-        </div>
       </div>
-    </nav>
-
-    <div class="chat-body">
-      {{outlet}}
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a>Hello {{session.currentUser.displayName}}</a>
+          </li>
+          <li>
+            <a class="nav-item nav-link" {{action "signOut"}}>Sign Out</a>
+          </li>
+        </ul>
+      </div>
     </div>
+  </nav>
 
-<!-- ********************************* NOT sign-in ********************************* -->
+  <div class="chat-body">
+    {{outlet}}
+  </div>
+
+  <!-- ********************************* NOT sign-in ********************************* -->
 {{else}}
   <!-- nav bar -->
   <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -83,12 +82,13 @@
       </div>
       <div class="col-md-4">
         <h2>Socket.IO</h2>
-        <p>Socket.IO  is a JavaScript library for realtime web applications. It enables realtime, bi-directional communication between web clients and servers. It works on every platform, browser or device, focusing equally on reliability and speed.</p>
+        <p>Socket.IO is a JavaScript library for realtime web applications. It enables realtime, bi-directional communication between web clients and servers. It works on every platform, browser or device, focusing equally on reliability and speed.</p>
         <p><a class="btn btn-default" href="https://socket.io/" role="button">View details »</a></p>
-     </div>
+      </div>
       <div class="col-md-4">
         <h2>Firebase</h2>
-        <p>Firebase is a mobile and web application development platform. Firebase's initial product was a realtime database. The company was acquired by Google in October 2014 and a significant number of new features were featured in May 2016 at Google I/O.</p>
+        <p>Firebase is a mobile and web application development platform. Firebase's initial product was a realtime database. The company was acquired by Google in October 2014 and a significant number of new features were featured in May 2016 at Google
+          I/O.</p>
         <p><a class="btn btn-default" href="https://firebase.google.com/" role="button">View details »</a></p>
       </div>
     </div>
@@ -97,6 +97,7 @@
     <footer>
       <p>&copy; Team 6 - CPSC 473 - CSUF</p>
     </footer>
-  </div> <!-- /container -->
+  </div>
+  <!-- /container -->
 
 {{/if}}
