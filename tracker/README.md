@@ -1,8 +1,8 @@
 # CPSC 473 Project 2
 
-Group Members: Payaam Emami, Yijie Sun, Tayseer Edouni, Kevin Lam, Long Nguyen
-Project Summary: This is a Web application with real-time where users draw and chat with others
-It is implemented using Ember JS, JavaScript, HTML, CSS, Bootstrap, socketIO, Firebase
+* Group Members: Payaam Emami, Yijie Sun, Tayseer Edouni, Kevin Lam, Long Nguyen
+* Project Summary: This is a Web application with real-time where users draw and chat with others
+* It is implemented using Ember JS, JavaScript, HTML, CSS, Bootstrap, socketIO, Firebase
 
 ## Prerequisites
 
